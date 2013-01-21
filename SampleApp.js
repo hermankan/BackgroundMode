@@ -8,7 +8,7 @@ var Utils =
 
 	stopBackgroundMode: function()
 	{
-		cordova.exec(null, null, "BackgroundMode", "stop");
+		cordova.exec(null, null, "BackgroundMode", "end");
 	}
 };
 
