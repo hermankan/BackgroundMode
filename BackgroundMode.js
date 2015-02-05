@@ -1,4 +1,4 @@
-var BackgroundMode =
+module.exports =
 {
 	start: function()
 	{

@@ -1,0 +1,19 @@
+<?xml version="1.0" encoding="UTF-8"?>
+    <plugin xmlns="http://apache.org/cordova/ns/plugins/1.0"
+            id="com.embarkmobile.cordova.backgroundmode" version="0.0.1">
+        <name>BackgroundMode</name>
+        <description>Protecting Cordova applications on iOS from getting suspended</description>
+        <keywords>cordova,device</keywords>
+        <js-module src="BackgroundMode.js" name="BackgroundMode">
+            <clobbers target="BackgroundMode" />
+        </js-module>
+        <platform name="ios">
+            <config-file target="config.xml" parent="/*">
+                <feature name="BackgroundMode">
+                    <param name="ios-package" value="BackgroundMode"/>
+                </feature>
+            </config-file>
+            <header-file src="BackgroundMode.h" />
+            <source-file src="BackgroundMode.m" />
+        </platform>
+    </plugin>
