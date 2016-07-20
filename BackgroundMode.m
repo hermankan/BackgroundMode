@@ -17,17 +17,11 @@
 	UIBackgroundTaskIdentifier task;
 }
 
-- (CDVPlugin*)initWithWebView:(UIWebView*)theWebView
-{
-	self = [super initWithWebView:theWebView];
-	if (self)
-	{
-		task = UIBackgroundTaskInvalid;
-		
-		[[NSNotificationCenter defaultCenter] addObserver:self selector:@selector(onPause:) name:UIApplicationDidEnterBackgroundNotification object:nil];
-		[[NSNotificationCenter defaultCenter] addObserver:self selector:@selector(onResume:) name:UIApplicationWillEnterForegroundNotification object:nil];
-	}
-	return self;
+- (void) pluginInitialize {
+	task = UIBackgroundTaskInvalid;
+
+	[[NSNotificationCenter defaultCenter] addObserver:self selector:@selector(onPause:) name:UIApplicationDidEnterBackgroundNotification object:nil];
+	[[NSNotificationCenter defaultCenter] addObserver:self selector:@selector(onResume:) name:UIApplicationWillEnterForegroundNotification object:nil];
 }
 
 - (void)stopBackgroundTask:(UIApplication*)application
